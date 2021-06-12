@@ -28,6 +28,9 @@ Appointment Availability APIs
 
 Certificate APIs
 
+NOTE:
+{{url}} = " https://cdn-api.co-vin.in/api ".
+
 11. Download vaccination certificate in PDF format by beneficiary reference id
 
 Resource reference: Co-WIN Public APIs<br>
