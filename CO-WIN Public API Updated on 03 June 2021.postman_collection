@@ -1,0 +1,328 @@
+{
+	"info": {
+		"_postman_id": "9a5a3279-e6fb-407f-8c46-8f671059af6d",
+		"name": "CO-WIN API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get OTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"mobile\": \"1234567890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/v2/auth/public/generateOTP",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v2",
+						"auth",
+						"public",
+						"generateOTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Confirm OTP",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"otp\": \"71c036b30f21ee57fe17c1c73x6591bfx703dc023f8cfdfe75d380f67e4313a9\",\r\n  \"txnId\": \"15978adf-ca53-49bc-443d-ebf8cac372f8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{url}}/v2/auth/public/confirmOTP",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v2",
+						"auth",
+						"public",
+						"confirmOTP"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find States",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v2/admin/location/states",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v2",
+						"admin",
+						"location",
+						"states"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get list of districts",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v2/admin/location/districts/26",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v2",
+						"admin",
+						"location",
+						"districts",
+						"26"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get vaccination sessions by PIN",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": {
+					"raw": "{{url}}/v2/appointment/sessions/public/findByPin?pincode=768016&date=12-06-2021",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v2",
+						"appointment",
+						"sessions",
+						"public",
+						"findByPin"
+					],
+					"query": [
+						{
+							"key": "pincode",
+							"value": "768016"
+						},
+						{
+							"key": "date",
+							"value": "12-06-2021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get vaccination sessions by district",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{url}}/v2/appointment/sessions/public/findByDistrict?district_id=452&date=12-06-2021",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v2",
+						"appointment",
+						"sessions",
+						"public",
+						"findByDistrict"
+					],
+					"query": [
+						{
+							"key": "district_id",
+							"value": "452"
+						},
+						{
+							"key": "date",
+							"value": "12-06-2021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get vaccination centers by latitude and longitude",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v2/appointment/centers/public/findByLatLong?lat=21.48&long=83.88",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v2",
+						"appointment",
+						"centers",
+						"public",
+						"findByLatLong"
+					],
+					"query": [
+						{
+							"key": "lat",
+							"value": "21.48"
+						},
+						{
+							"key": "long",
+							"value": "83.88"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get vaccination sessions by PIN for 7 days",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v2/appointment/sessions/public/calendarByPin?pincode=768017&date=12-06-2021\"",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v2",
+						"appointment",
+						"sessions",
+						"public",
+						"calendarByPin"
+					],
+					"query": [
+						{
+							"key": "pincode",
+							"value": "768017"
+						},
+						{
+							"key": "date",
+							"value": "12-06-2021\""
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get vaccination sessions by district for 7 days",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v2/appointment/sessions/public/calendarByDistrict?district_id=452&date=12-06-2021",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v2",
+						"appointment",
+						"sessions",
+						"public",
+						"calendarByDistrict"
+					],
+					"query": [
+						{
+							"key": "district_id",
+							"value": "452"
+						},
+						{
+							"key": "date",
+							"value": "12-06-2021"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get vaccination sessions by center for 7 days.",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Download vaccination certificate in PDF format",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "password",
+							"value": "{{bearer token}}.eyJ1c2VyX25hbWUiOiIwYjhmNTVkYi00ZjFjLTRiZWQtYTVmYi0zMDExZmI0ZDdmYzQiLCJ1c2VyX3R5cGUiOiJCRU5FRklDSUFSWSIsInVzZXJfaWQiOiIwYjhmNTVkhgy0ZjFjLTRiZWQtYTVmYi0zMDExZmI0ZDdmYzQiLCJtb2JpbGVfbnVtYmVyIjo3ODk0NzY1MjE3LCJiZW5lZmljaWFyeV9yZWZlcmVuY2VfaWQiOjMyNTgxMjUwMzc5NzAwLCJ0eG5JZCI6ImQ3YmRmYjhlLTA2NTItNDM2NS1hZDRmLWRjNGE5MjU4NmRkYSIsImlhdCI6MTYyMzQ3MzMzNywiZXhwIjoxNjIzNDc0MjM3fQ.G2IVQidimiDH7tQ1jq9dmhKJXQUtNf9XacKCjRjvx0o",
+							"type": "string"
+						},
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX25hbWUiOiIwYjhmNTVkYi00ZjFjLTRiZWQtYTVmYi0zMDExZmI0ZDdmYzQiLCJ1c2VyX3R5cGUiOiJCRU5FRklDSUFSWSIsInVzZXJfaWQiOiIwYjhmNTVkhgy0ZjFjLTRiZWQtYTVmYi0zMDExZmI0ZDdmYzQiLCJtb2JpbGVfbnVtYmVyIjo3ODk0NzY1MjE3LCJiZW5lZmljaWFyeV9yZWZlcmVuY2VfaWQiOjMyNTgxMjUwMzc5NzAwLCJ0eG5JZCI6ImQ3YmRmYjhlLTA2NTItNDM2NS1hZDRmLWRjNGE5MjU4NmRkYSIsImlhdCI6MTYyMzQ3MzMzNywiZXhwIjoxNjIzNDc0MjM3fQ.G2IVQidimiDH7tQ1jq9dmhKJXQUtNf9XacKCjRjvx0o",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{url}}/v2/registration/certificate/public/download?beneficiary_reference_id=1234567890123",
+					"host": [
+						"{{url}}"
+					],
+					"path": [
+						"v2",
+						"registration",
+						"certificate",
+						"public",
+						"download"
+					],
+					"query": [
+						{
+							"key": "beneficiary_reference_id",
+							"value": "1234567890123"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
